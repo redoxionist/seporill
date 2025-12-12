@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Seporill — Affi-70Ni | Ионообменный агарозный сорбент</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{
+      --accent:#0059ff;
+      --text:#111;
+      --mute:#777;
+      --bgTop:#fafafa;   /* светло-серая верхняя полоска */
+      --bgBody:#fff;     /* белое тело */
+      --card:#fff;
+      --radius:14px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text)}
+    html{scroll-behavior:smooth}
+    body{background:var(--bgBody);line-height:1.6}
+    img{max-width:100%;display:block}
+    a{text-decoration:none}
+    header{
+      position:fixed;
+      inset:0 0 auto 0;
+      background:var(--bgTop);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid #e5e5e5;
+      z-index:10;
+    }
+    .nav{
+      max-width:1100px;
+      margin:auto;
+      padding:18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{height:32px;opacity:0;animation:fadeIn .8s .2s forwards}
+    .nav-links{
+      display:flex;
+      gap:24px;
+      align-items:center;
+    }
+    .nav-links a{
+      font-size:.95rem;
+      color:var(--mute);
+      transition:color .2s;
+    }
+    .nav-links a:hover{color:var(--accent)}
+    .btn{
+      padding:10px 22px;
+      border-radius:30px;
+      font-weight:600;
+      font-size:.95rem;
+      transition:.25s;
+      display:inline-block;
+    }
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{background:#0044cc}
+    .btn-ghost{
+      border:2px solid var(--accent);
+      color:var(--accent);
+      background:none;
+    }
+    .btn-ghost:hover{background:var(--accent);color:#fff}
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url("product.png") 85% 50% / auto 90% no-repeat;
+      z-index:0;
+      animation:zoomIn 1.2s .3s forwards;
+    }
+    @keyframes zoomIn{to{transform:scale(1.05)}}
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      max-width:1100px;
+      margin:auto;
+      padding:140px 20px 80px;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:60px;
+    }
+    .hero-txt{flex:1 1 420px;opacity:0;animation:slideUp .9s .4s forwards}
+    h1{font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.15;margin-bottom:20px}
+    /* ограничиваем описание половиной ширины */
+    .lead{
+      font-size:1.3rem;
+      color:var(--mute);
+      margin-bottom:30px;
+      max-width:50vw;
+    }
+    .cta-group{display:flex;gap:15px;flex-wrap:wrap}
+    .section{padding:90px 20px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      max-width:1100px;
+      margin:auto;
+    }
+    .card{
+      background:var(--card);
+      padding:35px 30px;
+      border-radius:var(--radius);
+      box-shadow:0 4px 20px rgba(0,0,0,.04);
+      transition:.3s;
+      opacity:0;
+      transform:translateY(30px);
+    }
+    .card.show{opacity:1;transform:none}
+    .card:hover{transform:translateY(-6px)}
+    .icon{
+      width:46px;
+      height:46px;
+      background:var(--accent);
+      border-radius:50%;
+      margin-bottom:20px;
+    }
+    .faq-item{
+      background:var(--card);
+      margin-bottom:12px;
+      padding:22px 30px;
+      border-radius:var(--radius);
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      transition:.3s;
+    }
+    .faq-item:hover{box-shadow:0 4px 18px rgba(0,0,0,.06)}
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .4s ease;
+      padding:0 30px;
+      background:var(--card);
+      border-radius:0 0 var(--radius) var(--radius);
+    }
+    .faq-answer.open{max-height:200px;padding:0 30px 25px}
+    footer{background:#000;color:#fff;text-align:center;padding:40px 20px;font-size:.9rem}
+    footer *{color:#fff}
+    @keyframes fadeIn{to{opacity:1}}
+    @keyframes slideUp{to{opacity:1;transform:translateY(0)}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <img src="logo.png" class="logo" alt="Seporill">
+    <div class="nav-links">
+      <a href="#about">О нас</a>
+      <a href="#delivery">Условия доставки</a>
+      <a href="#marketplaces">Мы на маркетплейсах</a>
+      <a href="#order" class="btn btn-primary">Заказать</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-txt">
+      <h1>Affi-70Ni</h1>
+      <p class="lead">
+        Агарозный сорбент высокой ёмкости для ионообменной хроматографии. 100 мкмоль/мл, 100 µм, pH 4-13. Уже используют 37 биофарма-компаний РФ и СНГ.
+      </p>
+      <div class="cta-group">
+        <a href="#order" class="btn btn-primary">Оформить заказ</a>
+        <a href="#specs" class="btn btn-ghost">Характеристики</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="grid">
+    <div class="card">
+      <div class="icon"></div>
+      <h3>Высокая ёмкость</h3>
+      <p>100 мкмоль/мл позволяет загружать в колонку в 2-3 раза больше белка и уменьшать количество циклов.</p>
+    </div>
+    <div class="card">
+      <div class="icon"></div>
+      <h3>Низкое давление</h3>
+      <p>Ровные сферические частицы 100 µм обеспечивают свободный поток при 10 мл/мин и давлении до 0,3 МПа.</p>
+    </div>
+    <div class="card">
+      <div class="icon"></div>
+      <h3>Широкий pH-диапазон</h3>
+      <p>Работайте с агрессивными буферами и щелочными CIP-протоколами — матрица стабильна при pH 4-13.</p>
+    </div>
+    <div class="card">
+      <div class="icon"></div>
+      <h3>Проверено временем</h3>
+      <p>Более 500 успешных партий под заказ. Сертификаты качества и полный набор документов для GMP-аудита.</p>
+    </div>
+  </div>
+</section>
+
+<section id="specs" class="section">
+  <h2 style="text-align:center;margin-bottom:50px">Технические характеристики</h2>
+  <div class="grid" style="max-width:800px">
+    <div class="card"><strong>Ёмкость ионного обмена</strong><br>100 мкмоль/мл</div>
+    <div class="card"><strong>Размер частиц</strong><br>100 µм (сферические)</div>
+    <div class="card"><strong>pH-стабильность</strong><br>4 – 13</div>
+    <div class="card"><strong>Макс. скорость потока</strong><br>10 мл/мин</div>
+    <div class="card"><strong>Макс. давление</strong><br>0,3 МПа</div>
+    <div class="card"><strong>Фасовка</strong><br>100 г во флаконе</div>
+  </div>
+</section>
+
+<section id="delivery" class="section">
+  <h2 style="text-align:center;margin-bottom:40px">Условия доставки</h2>
+  <div style="max-width:700px;margin:auto">
+    <p>Бесплатная доставка по России от 3 флаконов. При заказе 1-2 флаконов — фиксированная стоимость 390 ₽. Отгрузка в течение 2 рабочих дней после оплаты. Доставляем в Казахстан и Беларусь службой DHL.</p>
+  </div>
+</section>
+
+<section id="marketplaces" class="section">
+  <h2 style="text-align:center;margin-bottom:40px">Мы на маркетплейсах</h2>
+  <div style="max-width:700px;margin:auto;text-align:center">
+    <p>Тот же товар можно купить на наших официальных страницах:</p>
+    <div class="cta-group" style="justify-content:center;margin-top:20px">
+      <a href="#" class="btn btn-ghost">Ozon</a>
+      <a href="#" class="btn btn-ghost">Wildberries</a>
+      <a href="#" class="btn btn-ghost">Яндекс.Маркет</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 style="text-align:center;margin-bottom:40px">Частые вопросы</h2>
+  <div style="max-width:700px;margin:auto">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <span>Какие колонки подходят для Affi-70Ni?</span>
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Любые колонки низкого давления с адаптерами XK, Tricorn, HiScale. Оптимальная высота слоя 10–20 см.</p>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <span>Можно ли стерилизовать матрицу?</span>
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Да, допускается автоклавирование при 121 °C 30 мин в 20% этаноле. Также разрешены щелочные CIP 0,5 М NaOH.</p>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <span>Сколько стоит и какие сроки?</span>
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Цена 19 800 ₽ за флакон 100 г. Бесплатная доставка по РФ от 3 флаконов. Отгрузка в течение 2 рабочих дней.</p>
+    </div>
+  </div>
+</section>
+
+<section id="order" class="section" style="text-align:center">
+  <h2>Готовы попробовать?</h2>
+  <p class="lead">Оставьте заявку и получите бесплатный пробный флакон 10 г или скидку 10% на первый заказ.</p>
+  <div class="cta-group" style="justify-content:center;margin-top:30px">
+    <a href="mailto:info@seporill.ru?subject=Заказ Affi-70Ni" class="btn btn-primary">Отправить заявку</a>
+    <a href="tel:+74951234567" class="btn btn-ghost">Позвонить</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 ООО «Сепорилл» — производство хроматографических сорбентов в России<br>
+  <a href="mailto:info@seporill.ru">info@seporill.ru</a> | <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+</footer>
+
+<script>
+  // показ карточек при скролле
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>e.target.classList.toggle('show',e.isIntersecting))
+  },{threshold:.2});
+  document.querySelectorAll('.card').forEach(c=>io.observe(c));
+
+  // аккордеон FAQ
+  function toggleFaq(el){
+    const box=el.nextElementSibling;
+    box.classList.toggle('open');
+    el.querySelector('span:last-child').textContent=box.classList.contains('open')?'−':'+';
+  }
+</script>
+</body>
+</html>
